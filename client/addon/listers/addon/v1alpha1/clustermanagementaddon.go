@@ -10,10 +10,13 @@ import (
 )
 
 // ClusterManagementAddOnLister helps list ClusterManagementAddOns.
+// All objects returned here must be treated as read-only.
 type ClusterManagementAddOnLister interface {
 	// List lists all ClusterManagementAddOns in the indexer.
+	// Objects returned here must be treated as read-only.
 	List(selector labels.Selector) (ret []*v1alpha1.ClusterManagementAddOn, err error)
 	// Get retrieves the ClusterManagementAddOn from the index for a given name.
+	// Objects returned here must be treated as read-only.
 	Get(name string) (*v1alpha1.ClusterManagementAddOn, error)
 	ClusterManagementAddOnListerExpansion
 }

@@ -60,19 +60,6 @@ func (ConfigCoordinates) SwaggerDoc() map[string]string {
 	return map_ConfigCoordinates
 }
 
-var map_AddOnStatusCondition = map[string]string{
-	"":                   "AddOnStatusCondition represents the state of the add-on managed and monitored components.",
-	"type":               "type specifies the aspect reported by this condition.",
-	"status":             "status of the condition. Status can be True, False, Unknown.",
-	"lastTransitionTime": "lastTransitionTime is the time of the last update to the current status property.",
-	"reason":             "reason is the CamelCase reason for the condition's current status.",
-	"message":            "message provides additional information about the current condition. This is only to be consumed by humans.",
-}
-
-func (AddOnStatusCondition) SwaggerDoc() map[string]string {
-	return map_AddOnStatusCondition
-}
-
 var map_ManagedClusterAddOn = map[string]string{
 	"":       "ManagedClusterAddOn is the Custom Resource object which holds the current state of an add-on. This object is used by add-on operators to convey their state. The resource should be created in the ManagedCluster namespace.",
 	"spec":   "spec holds configuration that could apply to any operator.",

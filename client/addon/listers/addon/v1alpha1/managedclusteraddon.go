@@ -10,8 +10,10 @@ import (
 )
 
 // ManagedClusterAddOnLister helps list ManagedClusterAddOns.
+// All objects returned here must be treated as read-only.
 type ManagedClusterAddOnLister interface {
 	// List lists all ManagedClusterAddOns in the indexer.
+	// Objects returned here must be treated as read-only.
 	List(selector labels.Selector) (ret []*v1alpha1.ManagedClusterAddOn, err error)
 	// ManagedClusterAddOns returns an object that can list and get ManagedClusterAddOns.
 	ManagedClusterAddOns(namespace string) ManagedClusterAddOnNamespaceLister
@@ -42,10 +44,13 @@ func (s *managedClusterAddOnLister) ManagedClusterAddOns(namespace string) Manag
 }
 
 // ManagedClusterAddOnNamespaceLister helps list and get ManagedClusterAddOns.
+// All objects returned here must be treated as read-only.
 type ManagedClusterAddOnNamespaceLister interface {
 	// List lists all ManagedClusterAddOns in the indexer for a given namespace.
+	// Objects returned here must be treated as read-only.
 	List(selector labels.Selector) (ret []*v1alpha1.ManagedClusterAddOn, err error)
 	// Get retrieves the ManagedClusterAddOn from the indexer for a given namespace and name.
+	// Objects returned here must be treated as read-only.
 	Get(name string) (*v1alpha1.ManagedClusterAddOn, error)
 	ManagedClusterAddOnNamespaceListerExpansion
 }
